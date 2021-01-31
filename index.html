@@ -1,48 +1,25 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <title>Increment Card</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head>
-
-<body>
-  <script type="text/javascript">
-    var slugify = (text) => {
-      return (text || '')
-        .replace(/&/g, ' and ')
-        .replace(/[^a-zA-Z0-9]/g, ' ')
-        .trim()
-        .replace(/\s+/g, '-')
-        .toLowerCase();
-    }
-    var options = {
-      author: "Lakshay Mothwal",
-      gameName: "Increment Card",
-      gameLink: "https://www.crazygames.com/game/your-game-here",
-      gameSlug: slugify("Increment Card"),
-      allowFullscreen: true,
-      locale: "en_US",
-      loader: "5.6.x",
-      loaderOptions: {
-        "moduleJsonUrl": "Build/webgl Landscape crazyGame.json",
-        "unityLoaderUrl": "Build/UnityLoader.js"
-      },
-      category: "UnitySDK",
-      categoryLink: "https://www.crazygames.com",
-	    thumbnail: "https://images.crazygames.com/upcoming.png",
-      gameStatus: "published",
-      dollarRate: 1,
-      sdkDebug: true,
-    };
-
-    window.CrazyGames = {};
-    window.CrazyGames.options = options;
-  </script>
-  <iframe id="unity" allow="autoplay; fullscreen" style="width: 960px; height: 540px;"></iframe>
-  <script type="text/javascript">
-    var iframe = document.getElementById('unity');
-    iframe.setAttribute('src', 'template.html' + window.location.search);
-  </script>
-</body>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Increment Card</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Welgl Improved 1.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 540px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Increment Card</div>
+      </div>
+    </div>
+  </body>
+</html>

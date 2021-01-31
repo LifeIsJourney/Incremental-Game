@@ -1,9 +1,9 @@
 {
 "companyName": "CeGames",
 "productName": "Increment Card",
-"dataUrl": "webgl Landscape crazyGame.data.unityweb",
-"wasmCodeUrl": "webgl Landscape crazyGame.wasm.code.unityweb",
-"wasmFrameworkUrl": "webgl Landscape crazyGame.wasm.framework.unityweb",
+"dataUrl": "Welgl Improved 1.data.unityweb",
+"wasmCodeUrl": "Welgl Improved 1.wasm.code.unityweb",
+"wasmFrameworkUrl": "Welgl Improved 1.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
