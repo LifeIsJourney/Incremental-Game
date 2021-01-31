@@ -1,15 +1,48 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Increment Card</title>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Welgl Improved.json");
-    </script>
-  </head>
-  <body>
-    <div id="gameContainer" style="width: 960px; height: 540px; margin: auto"></div>
-  </body>
-</html>
+<html>
+
+<head>
+  <title>Increment Card | Crazy Games</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+  <script type="text/javascript">
+    var slugify = (text) => {
+      return (text || '')
+        .replace(/&/g, ' and ')
+        .replace(/[^a-zA-Z0-9]/g, ' ')
+        .trim()
+        .replace(/\s+/g, '-')
+        .toLowerCase();
+    }
+    var options = {
+      author: "Unity Developer",
+      gameName: "Increment Card",
+      gameLink: "https://www.crazygames.com/game/your-game-here",
+      gameSlug: slugify("Increment Card"),
+      allowFullscreen: true,
+      locale: "en_US",
+      loader: "5.6.x",
+      loaderOptions: {
+        "moduleJsonUrl": "Build/webgl Landscape crazyGame.json",
+        "unityLoaderUrl": "Build/UnityLoader.js"
+      },
+      category: "UnitySDK",
+      categoryLink: "https://www.crazygames.com",
+	    thumbnail: "https://images.crazygames.com/upcoming.png",
+      gameStatus: "published",
+      dollarRate: 1,
+      sdkDebug: true,
+    };
+
+    window.CrazyGames = {};
+    window.CrazyGames.options = options;
+  </script>
+  <iframe id="unity" allow="autoplay; fullscreen" style="width: 960px; height: 540px;"></iframe>
+  <script type="text/javascript">
+    var iframe = document.getElementById('unity');
+    iframe.setAttribute('src', 'template.html' + window.location.search);
+  </script>
+</body>
